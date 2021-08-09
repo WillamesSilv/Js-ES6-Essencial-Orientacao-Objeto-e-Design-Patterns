@@ -1,6 +1,6 @@
 # Introdução a orientação a objetos
 
-### Objetivo da aula
+## Objetivo da aula
 
  - Herança
  - Classes 
@@ -8,16 +8,16 @@
  - Encapsulamento
  - Static
 
-## _Herança_
+### ___Herança___
 
 - Baseada em prototipos
 - Prototype
 - __ proto__
 - constructor
 
-**Prototype**  : É uma variavel que armazenda as definiçoes de um objeto;  
+**Prototype**  : É uma variavel que armazena as definições de um objeto;  
 
-Toda vez que criamos uma variável, ela tem essa referencia `__proto__` que aponta para o prototype do tipo que criamos, esse tipo é chamado de  `Constructor`.
+Toda vez que criamos uma variável, ela tem essa referência `__proto__` que aponta para o `prototype` do tipo que criamos, esse tipo é chamado de  `Constructor`.
 
 ~~~javascript
 'use strict';
@@ -26,7 +26,7 @@ const myText = 'Hello prototype!';
 
 myText.split(''); // de onde vem esse split?
 ~~~
-Mesmo codigo usando a funçao contrutora string que já carrega um protorype:
+Mesmo código usando a função contrutora `string` que já carrega um `protorype`:
 
 ~~~javascript 
 'use strict';
@@ -60,7 +60,7 @@ const cachoro = new Animal();
 console.log(cachorro.qtdePatas); // 4 
 ~~~
 
-Mas o que é este `new Foo(...)` ? O que ocorre quando pagamos uma função construtora e chamo ela com o operador `new` ?
+Mas o que é este `new Foo(...)` ? O que ocorre quando pegamos uma função construtora e chamamos ela com o operador `new` ?
 
 1. Um objeto é criado, herdando o `Foo.prototype`
 2. A função construtora `Foo` é chamada com os argumentos especificados e com o `this` vinculado ao novo objeto criado 
@@ -68,7 +68,7 @@ Mas o que é este `new Foo(...)` ? O que ocorre quando pagamos uma função cons
 ----------------------------------------------------------
 ## *Criando uma função derivada de outra*
 
-Podemos criar uma função contrutora derivada de outra, usnado a função `call`. 
+Podemos criar uma função contrutora derivada de outra, usando a função `call`. 
 
 A função `call` permite passar um contexto para a função ser executada, como se fosse uma herança.
 
@@ -113,7 +113,7 @@ const pug = new Cachorro(false);
 const pitBull = new Cachorro(true);
 ~~~
 
-Porém temos um problema, toda vez que criarmos um novo objeto `new Cachorro` a `function latir` e a `function movimentar` será criada. Nesse caso como todos eles vão se movimentar e latir da mesma maneira, não queremos ficar repetindo as funções, vamos criar a solução para isto partindo do principio de que quando criarmos a nossa função construtora ela permite que ecrevamos no `prototype`, sabemos que o `prototype` contém a definição do nosso objeto, sendo assim podemos criar `qtdePatas` e `movimentar` de maneira padronizada para nossa função `Animal`, da mesma forma para a função `Cachorro`, mas com uma diferença, quando formos criar o `prototype de Cadhorro` temos que informar que é derivado do `prototype de Animal`.
+Porém temos um problema, toda vez que criarmos um novo objeto `new Cachorro`, a `function latir` e a `function movimentar` será criada. Nesse caso como todos eles vão se movimentar e latir da mesma maneira, não queremos ficar repetindo as funções, vamos criar a solução para isto partindo do princípio de que quando criarmos a nossa função construtora ela permite que ecrevamos no `prototype`, sabemos que o `prototype` contém a definição do nosso objeto, sendo assim podemos criar `qtdePatas` e `movimentar` de maneira padronizada para nossa função `Animal`, da mesma forma para a função `Cachorro`, mas com uma diferença, quando formos criar o `prototype de Cachorro` temos que informar que é derivado do `prototype de Animal`.
 
 ~~~javascript 
 'use strict';
@@ -138,7 +138,7 @@ const pitBull = new Cachorro(true);
 ~~~
 ----------------------------------------------------------
 
-## *Classes*
+### ___Classes___
  - Criado a partir do **ES6**
  - Simplificação da herança de protótipos
  - Palavra chave **Class**
@@ -165,7 +165,7 @@ console.log(pug) // Cachorro {qtdePatas: 4, morde: 4}
 ~~~
 -------------------------------------------------------
 
-## *Modificadores de Acesso #*
+### ___Modificadores de Acesso #___
  - Será implementado a partir da versão 12 do node.js
  - Ainda não tem suporte no browsers.
  - Controle de privado/publico
@@ -236,15 +236,15 @@ p.getName() // 'André'
 ~~~
 -------------------------------------------------------
 
-## *Encapsulamento*
+### ___Encapsulamento___
 
  - Ocultar detalhes do funcionamento interno
  - Na versão 12 do node.js usa-se os metodos `get` e `set`
 
 ------------------------------------------------------
 
-## *Static*
- - Acessar metodos ou atributos sem instanciar
+### ___Static___
+ - Acessar metodos ou atributos sem instânciar
 
 ~~~javascript
 'use strict';
