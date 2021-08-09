@@ -104,7 +104,7 @@ function Cachorro(morde) {
     Animal.call(this, 4);
 
     this.morde = morde;
-    this.latir = functIon() {
+    this.latir = function() {
         console.log('Au, Au!');
     }
 };
