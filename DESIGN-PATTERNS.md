@@ -147,3 +147,82 @@ function MyApp() {
 }
 ~~~
 ### ___Decorator___
+
+Uma função decorator recebe uma outra função como parâmetro e estende o seu comportamento sem modificá-la explicitamente.
+
+ - [Proposta](https://github.com/tc39/proposal-decorators)
+ - [TypeScript](https://www.typescriptlang.org/docs/handbook/decorators.html)
+
+ Exemplo usando a sintaxe decorator:
+ ~~~javascript
+ function readonly(target, name, descriptor) {
+     descriptor.writable = false
+     return descriptor
+ }
+
+ class Job {
+     @readonly
+     title() { return 'CEO' }
+ }
+ ~~~
+
+ Exemplo de dacorator no Angular:
+
+ ~~~javascript
+ @Component({
+     selector: 'app-reactive-favorite-color',
+     template: `
+        Favorite Color: <input type="text" [formControl]="favoriteColorControl">
+    `
+ })
+
+ export class FavoriteColorComponent{
+     favoriteColorControl = new FormControl('')
+ }
+
+~~~
+### ___Observer___
+
+É um pattern muito popular em JavaScript. A instância (subscriber) mantém uma coleção de objetos (observers) e notifica todos eles quando ocorrem mudanças no estado.
+
+- [Vue](https://github.com/vuejs/vue/blob/dev/src/core/observer/index.js#L229)
+- [RxJs](https://rxjs-dev.firebaseapp.com/guide/observable)
+
+Exemplo de observer:
+
+~~~javascript
+class Observable {
+    constructor() {
+        this.observers = []
+    }
+
+    subscribe(f) {
+        this.observers.push(f)
+    }
+
+    unsubscribe(f) {
+        this.observers = this.observers.filter(subscriber => !== f )
+    }
+
+    notify(data){
+        this.observers.forEach(observer => observer(data))
+    }
+}
+~~~
+### ___Module___
+
+É um pattern que possibilita organizarmos melhor o nosso código, sem a necessidade de expor variáveis globais.
+
+Exemplo de module: 
+~~~javascript
+class Person {
+    constructo(name) {
+        this.name = name
+    }
+}
+
+export default Person
+
+// Utilizar Person
+import Person from './models/person'
+~~~
